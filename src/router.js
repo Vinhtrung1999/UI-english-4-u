@@ -5,6 +5,7 @@ import Register from './components/account/Register.vue'
 import index from './components/guest/index.vue'
 import Target from './components/guest/Target/Target.vue'
 import Sentence from './components/guest/Sentence/Sentence.vue'
+import Profile from './components/guest/Profile/Profile.vue'
 
 const routes = [
     {
@@ -19,6 +20,11 @@ const routes = [
                 path: 'target',
                 name: 'target',
                 component: Target,
+            },
+            {
+                path: 'profile',
+                name: 'profile',
+                component: Profile,
             },
             {
                 path: 'sentence',

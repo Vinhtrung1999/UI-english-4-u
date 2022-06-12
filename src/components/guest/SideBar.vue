@@ -7,14 +7,19 @@
             <div>Quynh Nguyen</div>
         </div>
         <router-link class="text-white" to="/target" active-class="active" exact>Target</router-link>
-        <router-link class="text-white" to="/sentence" active-class="active" exact>Profile</router-link>
-        <router-link class="text-white" to="/logout" active-class="active" exact>Logout</router-link>
+        <router-link class="text-white" to="/profile" active-class="active" exact>Profile</router-link>
+        <a class="text-white" href="javascript:void(0)" @click="logout()">Logout</a>
     </div>
 </template>
 
 <script>
 export default {
-
+    methods:{
+        logout(){
+            localStorage.clear()
+            this.$router.push('/login')
+        }
+    }
 }
 </script>
 
