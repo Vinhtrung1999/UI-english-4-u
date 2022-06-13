@@ -4,7 +4,7 @@
             <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png" alt="" width="100">
         </div>
         <div class="text-center my-1">
-            <div>Quynh Nguyen</div>
+            <div>{{ user.name }}</div>
         </div>
         <router-link class="text-white" to="/target" active-class="active" exact>Target</router-link>
         <router-link class="text-white" to="/profile" active-class="active" exact>Profile</router-link>
@@ -14,6 +14,11 @@
 
 <script>
 export default {
+    data() {
+        return {
+            user : JSON.parse(localStorage.getItem('user')) || ''
+        }
+    },
     methods:{
         logout(){
             localStorage.clear()

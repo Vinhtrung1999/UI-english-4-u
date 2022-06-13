@@ -5,7 +5,7 @@
             <div class="overlay-content">
                 <router-link to="/target" active-class="active" exact>Target</router-link>
                 <router-link to="/sentence" active-class="active" exact>Profile</router-link>
-                <router-link to="/logout" active-class="active" exact>Logout</router-link>
+                <router-link to="" active-class="active" exact @click="logout()">Logout</router-link>
             </div>
         </div>
         <span style="font-size:25px;cursor:pointer" @click="openNav()">&#9776;</span>    
@@ -20,6 +20,10 @@ export default {
         },
         closeNav() {
             document.getElementById("myNav").style.width = "0%";
+        },
+        logout(){
+            localStorage.clear()
+            this.$router.push('/login')
         }
     }
 }

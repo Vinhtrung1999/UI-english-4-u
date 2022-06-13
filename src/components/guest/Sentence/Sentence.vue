@@ -2,13 +2,13 @@
     <div class="p-lg-3">
         <div class="card">
             <div class="card-header bg-primary text-white fs-5">{{ title }}
-            <div class="progress">
-                <div
-                    class="progress-bar progress-bar-striped bg-warning"
-                    role="progressbar"
-                    :style="{width: progress}"
-                    aria-valuemax="{{target}}">{{ progress }}</div>
-            </div>
+                <div class="progress">
+                    <div
+                        class="progress-bar progress-bar-striped bg-warning"
+                        role="progressbar"
+                        :style="{width: progress}"
+                        aria-valuemax="{{target}}">{{ progress }}</div>
+                </div>
             </div>
             <div class="card-body">
                 <!-- <h5 class="card-title">Primary card title</h5> -->
@@ -41,7 +41,6 @@
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
