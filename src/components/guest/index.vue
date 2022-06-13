@@ -4,7 +4,7 @@
         <Sidebar />
         <div>
             <div class="content">
-                <router-view></router-view>
+                <router-view :listTarget="listTarget"></router-view>
             </div>
             
         </div>        
@@ -30,10 +30,15 @@ export default {
                                         },
                                         params: {'username': this.user.username}
                                     })
+        this.listTarget = dataTarget.data.data
+        
+
+
     },
     data() {
         return {
-            user : JSON.parse(localStorage.getItem('user'))
+            user : JSON.parse(localStorage.getItem('user')),
+            listTarget : []
         }
     },
     components:{
