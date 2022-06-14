@@ -4,7 +4,7 @@
             <a href="javascript:void(0)" class="closebtn" @click="closeNav()">&times;</a>
             <div class="overlay-content">
                 <router-link to="/target" active-class="active" exact>Target</router-link>
-                <router-link to="/sentence" active-class="active" exact>Profile</router-link>
+                <router-link to="/profile" active-class="active" exact>Profile</router-link>
                 <router-link to="" active-class="active" exact @click="logout()">Logout</router-link>
             </div>
         </div>

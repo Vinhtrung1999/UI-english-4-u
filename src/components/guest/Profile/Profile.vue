@@ -17,7 +17,7 @@
                         class="w-50">
                 </p>
                 
-                <a href="#" class="btn btn-sm btn-outline-warning">Change password</a>
+                <button class="btn btn-sm btn-outline-warning" @click="ChangePass()">Change password</button>
             </div>
         </div>        
     </div>
@@ -31,6 +31,11 @@ export default {
             user: JSON.parse(localStorage.getItem('user')) || ''
         }
     },
+    methods:{
+        ChangePass(){
+            alert(`Sorry, we're coming soon!`)
+        }
+    }
 }
 </script>
 

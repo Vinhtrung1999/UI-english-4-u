@@ -159,7 +159,7 @@ export default {
             this.alert = false
             this.alert_success = false
             if(this.username && this.password){
-                let data = await axios('http://localhost/english-for-you/api/guests/login.php',
+                let data = await axios('https://english-4-u.000webhostapp.com/api/guests/login.php',
                                     {
                                         method:'POST',
                                         headers: { 
@@ -196,7 +196,7 @@ export default {
             this.alert = false
             this.alert_success = false
             if(this.username_rg && this.name_rg && this.password_rg){
-                let data = await axios('http://localhost/english-for-you/api/guests/addGuest.php',
+                let data = await axios('https://english-4-u.000webhostapp.com/api/guests/addGuest.php',
                                     {
                                         method:'POST',
                                         headers: { 

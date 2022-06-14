@@ -1,10 +1,10 @@
 <template>
-    <div class="py-3 px-lg-5 px-md-3 px-2">
-		
+    <div class="py-3 px-lg-5 px-md-3 px-2">	
 		<div class="row g-3">
 			<template v-for="(item, index) in listTarget" :key="index">
 				<div class="col-6 col-lg-3 col-md-4 col-sm-6">
-					<router-link to="/sentence" class="text-decoration-none text-dark">
+					<router-link :to="'/sentence/' + item.idTarget + '?target='+item.target + '&title=' + item.title" 
+						class="text-decoration-none text-dark">
 						<div class="card mb-3" style="max-width: 540px;">
 							<div class="row g-0">
 								<div class="col-md-4">
@@ -12,10 +12,28 @@
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
-										<h6 class="card-title">{{ customTitle(item.title) }}</h6>
-										<p class="text-secondary" style="font-size: .8rem">3/50</p>
-										<div class="progress">
-											<div class="progress-bar progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+										<div
+											data-bs-toggle="tooltip"
+											data-bs-placement="top"
+											:title="item.title">{{ customTitle(item.title) }}</div>
+										<div
+											class="progress mt-2" 
+											v-show="(item.qty * 100 / item.target) != 100 ? true : false">
+											<div 
+												class="progress-bar progress-bar-striped" 
+												role="progressbar" 
+												:style="{'width': (item.qty * 100 / item.target) + '%'}" 
+												aria-valuenow="10" 
+												aria-valuemin="0" 
+												::aria-valuemax="item.target">
+													{{item.qty}} / {{ item.target }}
+												</div>
+										</div>
+										<div v-show="(item.qty * 100 / item.target) == 100 ? true : false">
+											<span class="badge rounded-pill bg-success">Completed</span>
+										</div>
+										<div class="text-end mt-2 text-secondary" style="font-size: .8rem">
+											{{ item.dateCreate }}
 										</div>
 									</div>
 								</div>
@@ -35,7 +53,7 @@ export default {
 	props:['listTarget'],
 	methods:{
 		customTitle(title){
-			return title.slice(0, 10) + '...'
+			return title.slice(0, 15) + '...'
 		}
 	}
 }

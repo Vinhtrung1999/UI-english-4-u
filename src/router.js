@@ -27,7 +27,8 @@ const routes = [
                 component: Profile,
             },
             {
-                path: 'sentence',
+                path: 'sentence/:idTarget',
+                name: 'sentence',
                 component: Sentence,
             },
         ]
