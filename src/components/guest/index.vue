@@ -15,7 +15,6 @@
                 <div class="content">
                     <router-view :listTarget="listTarget"></router-view>
                 </div>
-                
             </div>
         </transition>        
     </div>    
