@@ -3,9 +3,7 @@
         <div class="add-target">
 			<button class="btn-addTarget" data-bs-toggle="modal" data-bs-target="#addTargetModal">+</button>
 		</div>		
-		<!-- Button trigger modal -->
 
-		<!-- Modal -->
 		<div
             class="modal fade modal-custom"
             id="addTargetModal"
@@ -21,6 +19,7 @@
                             class="btn-close btn-close-white"
                             data-bs-dismiss="modal"
                             @click="this.msgBadge = ''"
+                            ref="clModal"
                             aria-label="Close"></button>
                     </div>
                     <div class="modal-body pt-5">
@@ -93,6 +92,7 @@ export default {
                     this.msgBadge = 'success'
                     this.title = ''
                     this.target = 0
+                    this.$refs.clModal.click()
                 }
 
             }

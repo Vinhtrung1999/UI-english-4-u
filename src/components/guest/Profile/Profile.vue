@@ -12,9 +12,9 @@
                 <h5 class="card-title">{{ user.name }}</h5>
                 <p class="card-text">
                     <img 
-                        src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png" 
+                        src="/abstract-user-flat-4.png" 
                         alt=""
-                        class="w-50">
+                        class="w-75">
                 </p>
                 
                 <button class="btn btn-sm btn-outline-warning" @click="ChangePass()">Change password</button>
@@ -43,10 +43,5 @@ export default {
     .base-profile{
         width: 50%;
         margin: auto;
-    }
-    @media screen and (max-width: 800px) {
-        .base-profile{
-            width: 90%;
-        }
     }
 </style>

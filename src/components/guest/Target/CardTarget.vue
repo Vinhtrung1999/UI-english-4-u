@@ -53,6 +53,8 @@ export default {
 	props:['listTarget'],
 	methods:{
 		customTitle(title){
+			if(title.length < 20)
+				return title
 			return title.slice(0, 15) + '...'
 		}
 	}

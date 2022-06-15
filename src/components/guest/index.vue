@@ -10,13 +10,12 @@
                 </div>
             </div>
         </div>
-        <transition name="sl-on">
+        
             <div v-show="pageReady">
                 <div class="content">
-                    <router-view :listTarget="listTarget"></router-view>
+                    <router-view :listTarget="listTarget" :pageReady="pageReady"></router-view>
                 </div>
-            </div>
-        </transition>        
+            </div>      
     </div>    
 
     
@@ -45,7 +44,6 @@ export default {
         })
 
         emitter.on('updateTarget', async (data) => {
-            console.log(data)
             if(data){
                 let dataTarget = await axios('https://english-4-u.000webhostapp.com/api/pkgTargets/getTargetByUser.php',
                                     {
@@ -88,22 +86,6 @@ export default {
 
     div.content {
         margin-left: 15%;
-    }
-
-        .sl-on-enter-active,
-    .sl-on-leave-active {
-        animation: slide-on .6s ease-in;
-    }
-
-    @keyframes slide-on{
-        0%{
-            opacity: .4;
-            transform: translateX(-100px);
-        }
-        100%{
-            opacity: .6;
-            transform: translateX(0px);
-        }
     }
 
     @media screen and (max-width: 1000px) {

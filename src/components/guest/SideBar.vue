@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar bg-primary text-white">
         <div class="text-center my-1">
-            <img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png" alt="" width="100">
+            <img src="/abstract-user-flat-4.png" alt="" width="100">
         </div>
         <div class="text-center my-1">
             <div>{{ user.name }}</div>
